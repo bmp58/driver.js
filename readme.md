@@ -5,21 +5,19 @@
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://npmjs.org/package/driver.js">
-    <img src="https://img.shields.io/npm/v/driver.js.svg" alt="version" />
-  </a>
-  <a href="https://npmjs.org/package/driver.js">
-    <img src="https://img.shields.io/npm/dt/driver.js.svg" alt="downloads" />
+    <img src="https://badge.fury.io/js/driver.js.svg" alt="version" />
   </a>
 </p>
 
 <p align="center">
-  <b>Powerful, highly customizable vanilla JavaScript engine to drive the user's focus across the page</b></br>
-  <sub>No external dependencies, supports all major browsers and highly customizable <sub>
+  <b>Powerful yet light-weight, vanilla JavaScript engine to drive the user's focus across the page</b></br>
+  <sub>Only ~4kb, no external dependency, supports all major browsers and highly customizable <sub>
 </p>
 
 <br />
 
 * **Simple**: is simple to use and has no external dependency at all
+* **Light-weight**: ~4kb in size, vanilla JavaScript and no external dependency
 * **Highly customizable**: has a powerful API and can be used however you want
 * **Highlight anything**: highlight any (literally any) element on page
 * **Feature introductions**: create powerful feature introductions for your web applications
@@ -206,7 +204,7 @@ driver.defineSteps([
     onNext: () => {
       // Prevent moving to the next step
       driver.preventMove();
-      
+
       // Perform some action or create the element to move to
       // And then move to that element
       setTimeout(() => {
@@ -252,7 +250,7 @@ const driver = new Driver({
   stageBackground: '#ffffff',       // Background color for the staged behind highlighted element
   nextBtnText: 'Next',              // Next button text for this step
   prevBtnText: 'Previous',          // Previous button text for this step
-  showButtons: false,               // Do not show control buttons in footer
+  showButtons: false | ['next', 'prev', 'close'],               // Do not show control buttons in footer
   keyboardControl: true,            // Allow controlling through keyboard (escape to close, arrow keys to move)
   scrollIntoViewOptions: {},        // We use `scrollIntoView()` when possible, pass here the options for it if you want any
   onHighlightStarted: (Element) => {}, // Called when element is about to be highlighted
@@ -281,7 +279,7 @@ const stepDefinition = {
     doneBtnText: 'Done',        // Text on the last button
     closeBtnText: 'Close',      // Text on the close button
     nextBtnText: 'Next',        // Next button text
-    prevBtnText: 'Previous',    // Previous button text
+    prevBtnText: 'Previous',    // Previous button text
   },
   onNext: () => {},             // Called when moving to next step from current step
   onPrevious: () => {},         // Called when moving to previous step from current step
@@ -384,5 +382,4 @@ Thanks to [BrowserStack](https://browserstack.com) for sponsoring the compatibil
 ## License
 
 MIT &copy; [Kamran Ahmed](https://twitter.com/kamranahmedse)
-
 
